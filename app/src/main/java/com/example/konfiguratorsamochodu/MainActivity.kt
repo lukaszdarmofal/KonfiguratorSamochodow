@@ -1,10 +1,12 @@
 package com.example.konfiguratorsamochodu
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,10 +27,9 @@ class MainActivity : AppCompatActivity() {
 
         val cars_radiogroup = findViewById<RadioGroup>(R.id.car_radiogroup)
         val car_image = findViewById<ImageView>(R.id.car_image)
-
-
+        var selectedCar = "Sedan"
         cars_radiogroup.setOnCheckedChangeListener {_, checkedId ->
-            val selectedCar = findViewById<RadioButton>(checkedId).text
+            selectedCar = findViewById<RadioButton>(checkedId).text.toString()
 
             if (selectedCar == "Sedan") {
                 car_image.setImageResource(R.drawable.sedan)
@@ -37,7 +38,6 @@ class MainActivity : AppCompatActivity() {
             } else if (selectedCar == "Hatchback") {
                 car_image.setImageResource(R.drawable.hatchback)
             }
-
         }
 
         // Checkboxy
@@ -62,6 +62,20 @@ class MainActivity : AppCompatActivity() {
 
         // Button z podsumowaniem
 
+        val summary_button = findViewById<Button>(R.id.summary_button)
+        val summary_textview = findViewById<TextView>(R.id.summary_text)
+
+        summary_button.setOnClickListener {
+            val dodatki = mutableListOf<String>()
+            if (att1) {dodatki.add("Klimatyzacja")}
+            if (att2) {dodatki.add("Skórzane siedzenia")}
+            if (att3) {dodatki.add("Android Auto")}
+            if (dodatki.isEmpty()) { dodatki.add("brak") }
+
+            dodatki.toString()
+
+            summary_textview.text = "Wybrany samochód: ${selectedCar}\nWybrane dodatki: ${dodatki}"
+        }
 
 
 
