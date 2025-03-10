@@ -7,7 +7,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="horizontal">
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/car_image"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/sedan" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wybierz swój samochód:"
+        android:textSize="19dp"
+        android:layout_margin="6dp"/>
+
+    <RadioGroup
+        android:id="@+id/car_radiogroup"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/car_sedan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Sedan" />
+
+        <RadioButton
+            android:id="@+id/car_suv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Suv" />
+
+        <RadioButton
+            android:id="@+id/car_hatchback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hatchback" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wybierz swoje dodatki:"
+        android:textSize="19dp"
+        android:layout_margin="6dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/attachment_1"
+        android:text="Klimatyzacja"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/attachment_2"
+        android:text="Skórzane siedzenia"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/attachment_3"
+        android:text="Android Auto"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Podsumowanie"
+        android:layout_margin="20dp"
+        android:id="@+id/summary_button"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/summary_text"/>
 
 
 </LinearLayout>
