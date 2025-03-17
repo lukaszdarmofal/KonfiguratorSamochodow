@@ -72,9 +72,12 @@ class MainActivity : AppCompatActivity() {
             if (att3) {dodatki.add("Android Auto")}
             if (dodatki.isEmpty()) { dodatki.add("brak") }
 
-            dodatki.toString()
+            var dodatkiString = ""
 
-            summary_textview.text = "Wybrany samochód: ${selectedCar}\nWybrane dodatki: ${dodatki}"
+            dodatki.forEach {x -> dodatkiString += x + ", "}
+            dodatkiString = dodatkiString.trim().trimEnd(',')
+
+            summary_textview.text = "Wybrany samochód: ${selectedCar}\nWybrane dodatki: ${dodatkiString}"
         }
 
 
